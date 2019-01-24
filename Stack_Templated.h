@@ -26,6 +26,37 @@ public:
 	// way we get around this is to keep them together. This is the professional practice when using templates.
 };
 
+template <typename generic_type>	// Note how I need to redeclare the templated type for the next class (different scope/context).
+class Stack
+{
+private:
+	// In the line below, I need to declare what type is stored in the StackNode. In this case, StackNode will be of type generic_type (whatever has been specified by the coder at implementation time)
+	StackNode<generic_type>* top;
 
+public:
+	Stack()
+	{
+		top = nullptr;
+	}
+
+	void Push(generic_type push_data)
+	{
+		// Create a new StackNode to store the data
+		StackNode<generic_type>* push_node = new StackNode<generic_type>(push_data);
+
+		if(top == nullptr)	// Stack is empty
+		{
+			top = push_node;
+		}
+		else // Stack already has data, add to the top
+		{
+			push_node->next = top;
+			top = push_node;
+		}
+	}
+
+
+
+};
 
 
