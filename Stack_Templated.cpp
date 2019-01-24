@@ -22,7 +22,20 @@ int main()
 	int empty_pop_result = stack_on_heap->Pop();
 	cout << "Empty Pop Result should be NULL. It's value actually is " << empty_pop_result << endl;
 
-	Stack<char> char_stack_stack = Stack<char>();
+	stack_on_heap->Push(5);
+	stack_on_heap->Push(4);
+	stack_on_heap->Push(3);
+	stack_on_heap->Push(2);
+	stack_on_heap->Push(1);
 
+
+
+	// Stack with a different type of data. Is it truly generic???
+	Stack<char> char_stack_stack = Stack<char>();
+	char_stack_stack.Push('e');
+	char_stack_stack.Push('d');
+	char_stack_stack.Push('c');
+	char_stack_stack.Push('b');
+	char_stack_stack.Push('a');
 }
 
