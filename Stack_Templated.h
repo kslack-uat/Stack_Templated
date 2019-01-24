@@ -14,6 +14,12 @@ public:
 		next = nullptr;
 	}
 
+	StackNode(generic_type init_data)
+	{
+		data = init_data;
+		next = nullptr;
+	}
+
 	StackNode(generic_type init_data, StackNode* init_next)
 	{
 		data = init_data;
