@@ -5,7 +5,7 @@ template <typename generic_type>
 class StackNode
 {
 public:
-	generic_type = data;
+	generic_type data;
 	StackNode* next;
 
 	StackNode()
@@ -17,7 +17,7 @@ public:
 	StackNode(generic_type init_data, StackNode* init_next)
 	{
 		data = init_data;
-		next = init_next
+		next = init_next;
 	}
 
 	// One thing you will probably notice is that I am not following standard C++ professional programming practice. Or at least it looks that way.
@@ -26,13 +26,6 @@ public:
 	// way we get around this is to keep them together. This is the professional practice when using templates.
 };
 
-template <typename generic_type>	// Note how I need to redeclare the templated type for the next class (different scope/context).
-class Stack
-{
-public:
 
-private:
-	StackNode
-};
 
 
