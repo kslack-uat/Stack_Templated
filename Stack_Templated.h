@@ -56,6 +56,36 @@ public:
 	}
 
 
+	generic_type Pop()
+	{
+		StackNode<generic_type>* pop_node = top;
+		if(top != nullptr)
+		{
+			top = top->next;
+		}
+
+		if (pop_node != nullptr)
+		{
+			return pop_node->data;
+		}
+		else
+		{
+			return NULL;
+		}
+	}
+
+
+	generic_type Peek()
+	{
+		if (top != nullptr)
+		{
+			return top->data;
+		}
+		else
+		{
+			return NULL;
+		}
+	}
 
 };
 
